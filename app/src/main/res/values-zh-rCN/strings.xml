@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Test</string>
+    <string name="chinese">中文</string>
+    <string name="english">英文</string>
+    <string name="setLanguage">设置系统语言</string>
+</resources>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.zhouchao.test">
+    <!-- android:sharedUserId="android.uid.system" -->
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- 震动 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" /> <!-- 更改系统语言时会用到 -->
+    <uses-permission android:name="android.permission.ACCESS_CACHE_FILESYSTEM" /> <!-- A/B更新时需要 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- GPS需要 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 在App中使用摄像头 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 在SD卡上存储图像或者视频 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- 需要录制音频 -->
+    <uses-feature android:name="android.hardware.camera" /> <!-- 声明应用需要有摄像头 -->
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:name=".application.MyApplication"
+        android:allowBackup="true"
+        android:fullBackupContent="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".activity.NotificationActivity$NotificationBroadcastReceiver"
+            tools:ignore="ExportedReceiver">
+            <intent-filter>
+                <action android:name="notification_clicked" />
+                <action android:name="notification_delete" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".activity.GlideActivity" />
+        <activity android:name=".activity.HtmlFromHtmlActivity" />
+        <activity android:name=".activity.SoundPoolActivity" />
+        <activity android:name=".activity.NotificationActivity" />
+        <activity android:name=".activity.ShellUtilsActivity" />
+        <activity android:name=".activity.GetIpAddressActivity" />
+        <activity android:name=".activity.SIMAndTFActivity" />
+        <activity android:name=".activity.UDPBroadcastActivity" />
+        <activity android:name=".activity.LanguageActivity" />
+        <activity android:name=".activity.OTAActivity" />
+        <activity android:name=".activity.GPSActivity" />
+        <activity android:name=".activity.UploadFileActivity" />
+        <activity android:name=".activity.CameraActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".activity.NumberActivity"
+            android:screenOrientation="landscape"/>
+    </application>
+
+</manifest>
